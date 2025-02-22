@@ -1,0 +1,20 @@
+{
+    "name": "Lucas",
+    "roles": [
+        "Software Engineer",
+        "Tech Enthusiast",
+        "Minimalist",
+        "Design Enthusiast"
+    ],
+    "birthdayTimestamp": 1008306780,
+    "location": "Berlin, Germany",
+    "locationLink": "https://maps.app.goo.gl/AvMD6JaYt92gbcMx6",
+    "socials": {
+        "instagramUrl": "https://www.instagram.com/lv.cas_",
+        "twitterUrl": "https://twitter.com/luc141201",
+        "githubUrl": "https://github.com/luc1412",
+        "linkedinUrl": "https://www.linkedin.com/in/lucas-hardt-06175b177",
+        "xingUrl": "https://www.xing.com/profile/Lucas_Hardt4",
+        "discordUrl": "https://discord.com/users/262511457948663809"
+    }
+}
