@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import Markdown from "react-markdown"
 import Link from "next/link"
+import Image from "next/image"
 
 export default function ProjectsSection() {
   const projectRefs = projects.map(() => useRef(null))
@@ -105,11 +106,24 @@ export default function ProjectsSection() {
 
               {/* Scrollable Main Content: Image, Markdown, and Technologies */}
               <div className="flex-1 overflow-y-auto">
-                <img
-                  src={selectedProject.imageUrl || "/placeholder.svg"}
-                  alt={selectedProject.name}
-                  className="w-full h-32 md:h-48 object-cover mb-6"
-                />
+                <div 
+                  className="w-full h-32 md:h-48 mb-6 rounded-2xl flex items-center justify-center"
+                  style={{
+                    background: `linear-gradient(135deg, ${selectedProject.colors.join(', ')})`
+                  }}
+                >
+                    {selectedProject.imageUrl ? (
+                    <Image
+                      src={`/project_logos/${selectedProject.imageUrl}`}
+                      alt={`${selectedProject.name} logo`}
+                      width={200} // Adjust as needed
+                      height={200} // Adjust as needed
+                      className="max-w-[50%] max-h-[50%] object-contain"
+                    />
+                    ) : (
+                    <span className="text-xl md:text-2xl font-bold text-white">{selectedProject.name}</span>
+                    )}
+                </div>
                 <div className="prose prose-invert max-w-none mb-6 text-sm md:text-base">
                   <Markdown>{selectedProject.description}</Markdown>
                 </div>

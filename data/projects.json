@@ -2,7 +2,8 @@
     {
       "name": "EduMFA",
       "url": "https://edumfa.io",
-      "imageUrl": "",
+      "imageUrl": "edumfa.svg",
+      "colors": ["#000000", "#000000"],
       "startedAt": "04-2024",
       "endedAt": null,
       "description": "EduMFA is a free, open-source solution for implementing MFA in existing applications. It’s a fork of [privacyIDEA](https://www.privacyidea.org/) with a focus on academic and research environments. I’ve contributed extensively to the [EduMFA web page](https://edumfa.io), redesigned the EduMFA Authenticator app, and improved the main application by enhancing code quality and streamlining workflows, such as CI improvements. This work is part of my occupation at Free University Berlin.",
@@ -27,7 +28,8 @@
     {
       "name": "War Legend",
       "url": "https://www.wls.gg/",
-      "imageUrl": "",
+      "imageUrl": "war_legend.webp",
+      "colors": ["#FFCBE1", "#F9E1AB"],
       "startedAt": "01-2023",
       "endedAt": "03-2023",
       "description": "War Legend is a French company that provides services within the e-sport market, with a focus on the video game Fortnite. I contributed as a freelancer for two months, working on multiple Discord applications as part of a software project for Epic Games.",
@@ -42,7 +44,8 @@
     {
       "name": "Free University Berlin",
       "url": "https://fu-berlin.de",
-      "imageUrl": "",
+      "imageUrl": "fu_berlin.webp",
+      "colors": ["#FFFFFF", "#FFFFFF"],
       "startedAt": "04-2020",
       "endedAt": null,
       "description": "The Free University Berlin is one of the largest universities in Germany. I work in the FU Directory and Identity Service (FUDIS) team as a software developer. I started in 2020 as a dual student while completing my CS bachelor's degree. Since October 2023, I've been a full-time employee.",
@@ -67,7 +70,8 @@
     {
       "name": "Fiverr Freelancing",
       "url": "https://www.fiverr.com/users/luc14121",
-      "imageUrl": "",
+      "imageUrl": "fiverr.svg",
+      "colors": ["#D6E5BD", "#BCD8EC"],
       "startedAt": "01-2020",
       "endedAt": "12-2020",
       "description": "In 2020, I offered freelancing services on Fiverr, building custom Discord applications. I completed around 30 gigs and earned about $1,000, which I used for my studies.",
@@ -82,7 +86,8 @@
     {
       "name": "EasyServerStats",
       "url": null,
-      "imageUrl": "",
+      "imageUrl": "easy_server_stats.webp",
+      "colors": ["#F9E1AB", "#FFDAB4"],
       "startedAt": "06-2019",
       "endedAt": "06-2020",
       "description": "EasyServerStats was a Discord application that provided a way to display statistics within a Discord server. Due to new developer guidelines, lack of cooperation from Discord, and unfair treatment towards competing projects, it was discontinued.",
@@ -102,7 +107,8 @@
     {
       "name": "EasyApexStats",
       "url": null,
-      "imageUrl": "",
+      "imageUrl": "easy_apex_stats.webp",
+      "colors": ["#FFCBE1", "#FFDAB4"],
       "startedAt": "03-2019",
       "endedAt": "06-2019",
       "description": "EasyApexStats was a Discord application for the video game [Apex Legends](https://www.ea.com/games/apex-legends/apex-legends) that focused on showing game stats and providing utilities. It relied on data mining from multiple sources, including EA Origin, PlayStation Network, Xbox Live, and Apex Legends' internal systems. The complexity of maintaining these data sources led to its sunset after three months.",
@@ -122,7 +128,8 @@
     {
       "name": "EasyFortniteStats",
       "url": "https://easyfnstats.com",
-      "imageUrl": "",
+      "imageUrl": "easy_fortnite_stats.webp",
+      "colors": ["#000000", "#000000"],
       "startedAt": "08-2018",
       "endedAt": null,
       "description": "EasyFortniteStats is one of the largest Discord applications for the video game [Fortnite](https://fortnite.com/), providing players access to in-game statistics, game news and even let them control their game account. With over 100,000 installations providing 7,000,000+ users access to the app and a peak monthly revenue of $7,000, it’s **my most successful solo project**. It provided me multiple challenges especially in the area of scaling and performance.",
@@ -162,7 +169,8 @@
     {
       "name": "EasyMaintenance",
       "url": "https://dev.bukkit.org/projects/easymainetance",
-      "imageUrl": "",
+      "imageUrl": "easy_maintenance.webp",
+      "colors": ["#BCD8EC", "#F9E1AB"],
       "startedAt": "05-2017",
       "endedAt": "12-2018",
       "description": "EasyMaintenance was a plugin for self-hosted multiplayer servers for the video game [Minecraft](https://minecraft.com/). It was my first public solo project that gained traction and generated a first small revenue stream.",
