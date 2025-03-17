@@ -31,7 +31,7 @@ export default function LandingSection() {
             <div className="w-full lg:w-1/2 flex justify-center">
               <div className="w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 relative">
                 <div className="w-full h-full relative overflow-hidden rounded-[48px]">
-                  <Image src="/logo.gif" alt="Profile Picture" fill style={{ objectFit: "cover" }} priority />
+                  <Image src="/logo.webp" alt="Profile Picture" fill style={{ objectFit: "cover" }} priority />
                 </div>
               </div>
             </div>
