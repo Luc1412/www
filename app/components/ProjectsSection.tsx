@@ -1,5 +1,5 @@
 "use client"
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect } from "react"
 import { motion, useInView } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 import projects from "@/data/projects.json"
@@ -11,8 +11,41 @@ import Link from "next/link"
 import Image from "next/image"
 
 export default function ProjectsSection() {
-  const projectRefs = projects.map(() => useRef(null))
+  // Create refs outside of the mapping function
+  const projectRefs = useRef(projects.map(() => useRef(null)));
+  // Track which projects are in view
+  const [inViewProjects, setInViewProjects] = useState<boolean[]>(Array(projects.length).fill(false));
   const [selectedProject, setSelectedProject] = useState<(typeof projects)[0] | null>(null)
+  
+  // Set up inView tracking for each project
+  useEffect(() => {
+    const observers = projects.map((_, index) => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setInViewProjects(prev => {
+              const updated = [...prev];
+              updated[index] = true;
+              return updated;
+            });
+            // Once it's in view, we can disconnect the observer
+            observer.disconnect();
+          }
+        },
+        { threshold: 0.1 }
+      );
+      
+      if (projectRefs.current[index]?.current) {
+        observer.observe(projectRefs.current[index].current);
+      }
+      
+      return observer;
+    });
+    
+    return () => {
+      observers.forEach(observer => observer.disconnect());
+    };
+  }, []);
 
   return (
     <section id="projects" className="w-full py-20 bg-main-bg">
@@ -23,16 +56,13 @@ export default function ProjectsSection() {
           <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-accent-yellow/20 md:transform md:-translate-x-1/2" />
 
           {projects.map((project, index) => {
-            const ref = projectRefs[index]
-            const isInView = useInView(ref, { once: true })
-
             return (
               <motion.div
-                ref={ref}
+                ref={projectRefs.current[index]}
                 key={project.name}
                 className="mb-16 md:mb-32 relative"
                 initial={{ opacity: 0, y: 50 }}
-                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+                animate={inViewProjects[index] ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 {/* Timeline dot */}
