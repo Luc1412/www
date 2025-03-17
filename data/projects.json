@@ -30,8 +30,8 @@
       "url": "https://www.wls.gg/",
       "imageUrl": "war_legend.webp",
       "colors": ["#FFCBE1", "#F9E1AB"],
-      "startedAt": "01-2023",
-      "endedAt": "03-2023",
+      "startedAt": "04-2023",
+      "endedAt": "06-2023",
       "description": "War Legend is a French company that provides services within the e-sport market, with a focus on the video game Fortnite. I contributed as a freelancer for two months, working on multiple Discord applications as part of a software project for Epic Games.",
       "technologies": [
         {
@@ -46,7 +46,7 @@
       "url": "https://fu-berlin.de",
       "imageUrl": "fu_berlin.webp",
       "colors": ["#FFFFFF", "#FFFFFF"],
-      "startedAt": "04-2020",
+      "startedAt": "10-2020",
       "endedAt": null,
       "description": "The Free University Berlin is one of the largest universities in Germany. I work in the FU Directory and Identity Service (FUDIS) team as a software developer. I started in 2020 as a dual student while completing my CS bachelor's degree. Since October 2023, I've been a full-time employee.",
       "technologies": [
@@ -73,7 +73,7 @@
       "imageUrl": "fiverr.svg",
       "colors": ["#D6E5BD", "#BCD8EC"],
       "startedAt": "01-2020",
-      "endedAt": "12-2020",
+      "endedAt": "10-2020",
       "description": "In 2020, I offered freelancing services on Fiverr, building custom Discord applications. I completed around 30 gigs and earned about $1,000, which I used for my studies.",
       "technologies": [
         {
@@ -130,7 +130,7 @@
       "url": "https://easyfnstats.com",
       "imageUrl": "easy_fortnite_stats.webp",
       "colors": ["#000000", "#000000"],
-      "startedAt": "08-2018",
+      "startedAt": "07-2018",
       "endedAt": null,
       "description": "EasyFortniteStats is one of the largest Discord applications for the video game [Fortnite](https://fortnite.com/), providing players access to in-game statistics, game news and even let them control their game account. With over 100,000 installations providing 7,000,000+ users access to the app and a peak monthly revenue of $7,000, it’s **my most successful solo project**. It provided me multiple challenges especially in the area of scaling and performance.",
       "technologies": [
@@ -171,8 +171,8 @@
       "url": "https://dev.bukkit.org/projects/easymainetance",
       "imageUrl": "easy_maintenance.webp",
       "colors": ["#BCD8EC", "#F9E1AB"],
-      "startedAt": "05-2017",
-      "endedAt": "12-2018",
+      "startedAt": "08-2017",
+      "endedAt": "01-2018",
       "description": "EasyMaintenance was a plugin for self-hosted multiplayer servers for the video game [Minecraft](https://minecraft.com/). It was my first public solo project that gained traction and generated a first small revenue stream.",
       "technologies": [
         {
