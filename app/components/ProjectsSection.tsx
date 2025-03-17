@@ -1,6 +1,6 @@
 "use client"
 import { useState, useRef, useEffect } from "react"
-import { motion, useInView } from "framer-motion"
+import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 import projects from "@/data/projects.json"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog"
@@ -11,8 +11,8 @@ import Link from "next/link"
 import Image from "next/image"
 
 export default function ProjectsSection() {
-  // Create refs outside of the mapping function
-  const projectRefs = useRef(projects.map(() => useRef(null)));
+  // Create an array of refs without calling useRef in a callback
+  const projectRefs = useRef<Array<HTMLDivElement | null>>(Array(projects.length).fill(null));
   // Track which projects are in view
   const [inViewProjects, setInViewProjects] = useState<boolean[]>(Array(projects.length).fill(false));
   const [selectedProject, setSelectedProject] = useState<(typeof projects)[0] | null>(null)
@@ -35,8 +35,8 @@ export default function ProjectsSection() {
         { threshold: 0.1 }
       );
       
-      if (projectRefs.current[index]?.current) {
-        observer.observe(projectRefs.current[index].current);
+      if (projectRefs.current[index]) {
+        observer.observe(projectRefs.current[index]);
       }
       
       return observer;
@@ -58,7 +58,9 @@ export default function ProjectsSection() {
           {projects.map((project, index) => {
             return (
               <motion.div
-                ref={projectRefs.current[index]}
+                ref={el => {
+                  projectRefs.current[index] = el;
+                }}
                 key={project.name}
                 className="mb-16 md:mb-32 relative"
                 initial={{ opacity: 0, y: 50 }}
