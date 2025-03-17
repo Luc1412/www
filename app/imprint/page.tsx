@@ -34,7 +34,7 @@ export default function Imprint() {
           <h2 className="text-3xl pt-5">Disclaimer</h2>
           <h3 className="text-2xl pt-5">Liability for Content</h3>
           <p>
-            The contents of our pages have been created with the utmost care. However, we cannot guarantee the contents'
+            The contents of our pages have been created with the utmost care. However, we cannot guarantee the contents&apos;
             accuracy, completeness, or topicality. According to statutory provisions, we are furthermore responsible for
             our own content on these web pages. In this context, please note that we are accordingly not obliged to
             monitor merely the transmitted or saved information of third parties, or investigate circumstances pointing

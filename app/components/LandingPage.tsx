@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import { useState, useEffect } from "react"
-import { Instagram, Twitter, Github } from "lucide-react"
+import { Instagram, Github, Linkedin } from "lucide-react"
 import general from "@/data/general.json"
 import Link from "next/link"
 
@@ -23,10 +23,9 @@ export default function LandingSection() {
   }, [])
 
   return (
-    <section className="w-full min-h-screen flex flex-col">
+    <section className="w-full h-screen flex flex-col">
       {/* Main content with flex-grow to push navigation to bottom */}
-      <div className="flex-grow flex items-center justify-center px-4 sm:px-6 md:px-8 lg:px-10">
-        <div className="bg-accent-yellow rounded-[48px] pt-6 px-6 pb-16 sm:pt-8 sm:px-8 sm:pb-20 md:pt-12 md:px-12 md:pb-24 lg:pt-16 lg:px-16 lg:pb-28 w-full min-h-[calc(100vh-4rem)] flex flex-col justify-center">
+        <div className="flex flex-col justify-center h-full bg-accent-yellow rounded-squircle lg:rounded-[48px] mx-4 sm:mx-6 md:mx-8 lg:mx-10 mt-4 sm:mt-6 md:mt-8 lg:mt-10   p-6 sm:p-6 md:p-8 lg:p-10">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-16 xl:gap-20 w-full">
             {/* Image container */}
             <div className="w-full lg:w-1/2 flex justify-center">
@@ -40,10 +39,10 @@ export default function LandingSection() {
             {/* Text content */}
             <div className="w-full lg:w-1/2 text-black z-10 text-center lg:text-left">
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-4 sm:mb-6 text-black">
-                Hey, I'm {general.name} <span className="inline-block animate-wave">👋</span>
+                Hey, I&apos;m {general.name} <span className="inline-block animate-wave">👋</span>
               </h1>
               <p className="text-xl sm:text-2xl mb-4 sm:mb-6 h-8">
-                I'm a{" "}
+                I&apos;m a{" "}
                 <span className={`transition-opacity duration-1000 ease-in-out ${isChanging ? "opacity-0" : "opacity-100"}`}>
                   {general.roles[currentRoleIndex]}
                 </span>
@@ -52,29 +51,28 @@ export default function LandingSection() {
                   Crafting intuitive user experiences with elegant code.
                 </p>
               <div className="flex justify-center lg:justify-start gap-4">
-                <a
-                  href={general.socials.instagramUrl}
-                  className="p-2 bg-black rounded-full text-accent-yellow hover:bg-opacity-80 transition-colors"
-                >
-                  <Instagram size={24} />
-                </a>
-                <a
-                  href={general.socials.twitterUrl}
-                  className="p-2 bg-black rounded-full text-accent-yellow hover:bg-opacity-80 transition-colors"
-                >
-                  <Twitter size={24} />
-                </a>
-                <a
+              <Link
                   href={general.socials.githubUrl}
                   className="p-2 bg-black rounded-full text-accent-yellow hover:bg-opacity-80 transition-colors"
                 >
                   <Github size={24} />
-                </a>
+                </Link>
+                <Link
+                  href={general.socials.instagramUrl}
+                  className="p-2 bg-black rounded-full text-accent-yellow hover:bg-opacity-80 transition-colors"
+                >
+                  <Instagram size={24} />
+                </Link>
+                <Link
+                  href={general.socials.linkedinUrl}
+                  className="p-2 bg-black rounded-full text-accent-yellow hover:bg-opacity-80 transition-colors"
+                >
+                  <Linkedin size={24} />
+                </Link>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
       {/* Navigation at bottom */}
       <nav className="flex justify-center gap-8 sm:gap-12 py-6">

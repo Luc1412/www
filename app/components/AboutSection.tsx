@@ -2,7 +2,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import general from "@/data/general.json"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@radix-ui/react-tooltip"
 import Link from "next/link"
-import React, { ReactElement, JSXElementConstructor, ReactNode, ReactPortal } from "react"
 
 export default function AboutSection() {
   const birthday = new Date(general.birthdayTimestamp * 1000)
@@ -19,11 +18,11 @@ export default function AboutSection() {
           </CardHeader>
           <CardContent>
             <p className="text-lg leading-relaxed">
-              I'm a <AboutTooltip tooltipText={`Born on ${birthdayFmt}`}>{age}-year-old</AboutTooltip> software engineer based in{' '}
-              <AboutLink href={general.locationLink}>{general.location}</AboutLink>. My journey in tech began at the age of 15 when I started developing my first game extensions in Java. My passion for technology grew quickly, leading me to write my first scientific paper in 9th grade.<br />
+              I&apos;m a <AboutTooltip tooltipText={`Born on ${birthdayFmt}`}>{age}-year-old</AboutTooltip> software engineer based in{' '}
+              <AboutLink href={general.locationLink}>{general.location}</AboutLink>. My journey in tech began at the age of 15 when I started developing my first game extensions in Java. My passion for technology grew quickly, leading me to write my first scientific paper about Java in 9th grade.<br />
               After graduating from high school in 2020, I pursued a degree in Computer Science at the <AboutLink href='https://hwr-berlin.de/'>Berlin School of Economics and Law</AboutLink>.  
               As part of a <AboutTooltip tooltipText={`50% studying, 50% working`}>dual study program</AboutTooltip>, I had the opportunity to work as a software developer at the{' '} 
-              <AboutLink href='https://fu-berlin.de/'>Free University of Berlin</AboutLink>. I completed my bachelor's degree in 2023 and continued working at my apprenticeship company as a full-time employee.
+              <AboutLink href='https://fu-berlin.de/'>Free University of Berlin</AboutLink>. I completed my bachelor&apos;s degree in 2023 and continued working at my apprenticeship company as a full-time employee.
             </p>
           </CardContent>
         </Card>
