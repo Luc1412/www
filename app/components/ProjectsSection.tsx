@@ -92,9 +92,9 @@ export default function ProjectsSection() {
                     onClick={() => setSelectedProject(project)}
                   >
                     <h3 className="text-xl md:text-2xl font-bold mb-3 text-white">{project.name}</h3>
-                    <Markdown className="text-gray-300 mb-4 line-clamp-3 text-sm md:text-base prose prose-invert">
-                      {project.description}
-                    </Markdown>
+                    <div className="text-gray-300 mb-4 line-clamp-3 text-sm md:text-base prose prose-invert">
+                      <Markdown>{project.description}</Markdown>
+                    </div>                      
                     <div className="flex flex-wrap gap-2 mb-4">
                       {project.technologies.slice(0, 3).map((tech) => (
                         <Badge
