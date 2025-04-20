@@ -10,8 +10,8 @@ export default function Imprint() {
           <h2 className="text-3xl">Information according to § 5 DDG</h2>
           <p>
             Lucas Hardt<br />
-            [Your Street Address]<br />
-            [Your City, Postal Code]<br />
+            Langhansstraße 136<br />
+            13086 Berlin<br />
             Germany
           </p>
           <h2 className="text-3xl pt-5">Represented by:</h2>
@@ -20,8 +20,6 @@ export default function Imprint() {
           </p>
           <h2 className="text-3xl pt-5">Contact</h2>
           <p>
-            Phone: [Your Phone Number]
-            <br />
             Email:{" "}
             <Link href={`mailto:${env.CONTACT_EMAIL}`} className="text-accent-yellow hover:underline">
               {env.CONTACT_EMAIL}
