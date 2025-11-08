@@ -1,12 +1,12 @@
 [
     {
-      "name": "EduMFA",
+      "name": "eduMFA",
       "url": "https://edumfa.io",
       "imageUrl": "edumfa.svg",
       "colors": ["#000000", "#000000"],
       "startedAt": "04-2024",
       "endedAt": null,
-      "description": "EduMFA is a free, open-source solution for implementing MFA in existing applications. It’s a fork of [privacyIDEA](https://www.privacyidea.org/) with a focus on academic and research environments. I’ve contributed extensively to the [EduMFA web page](https://edumfa.io), redesigned the EduMFA Authenticator app, and improved the main application by enhancing code quality and streamlining workflows, such as CI improvements. This work is part of my occupation at Free University Berlin.",
+      "description": "EduMFA is a free, open-source solution for implementing MFA in existing applications. It’s a fork of [privacyIDEA](https://www.privacyidea.org/) with a focus on academic and research environments. I’ve contributed extensively to the [EduMFA web page](https://edumfa.io), rewrote the EduMFA Authenticator app with React Native, and improved the main application by enhancing code quality and streamlining workflows, such as CI improvements. This work is part of my occupation at Free University Berlin.",
       "technologies": [
         {
           "name": "Python",
@@ -22,6 +22,11 @@
           "name": "Flutter",
           "subTechnologies": ["Dart"],
           "usage": "Used for the EduMFA Authenticator app."
+        },
+        {
+          "name": "React Native",
+          "subTechnologies": ["TypeScript", "Expo"],
+          "usage": "Used for the rewrite of the EduMFA Authenticator app."
         }
       ]
     },
