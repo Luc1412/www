@@ -4,6 +4,8 @@ import { Badge } from "@/components/ui/badge"
 import technologies from "@/data/technologies.json"
 import { useEffect, useState, useRef } from "react"
 
+const ITEMS_PER_ROW = 6
+
 export default function TechnologiesSection() {
   const sectionRef = useRef<HTMLDivElement>(null)
   const [isInView, setIsInView] = useState(false)
@@ -26,6 +28,33 @@ export default function TechnologiesSection() {
     return () => observer.disconnect()
   }, [])
 
+  // Split technologies into rows of ITEMS_PER_ROW
+  const rows: string[][] = []
+  for (let i = 0; i < technologies.length; i += ITEMS_PER_ROW) {
+    rows.push(technologies.slice(i, i + ITEMS_PER_ROW))
+  }
+
+  const renderBadge = (tech: string, globalIndex: number) => (
+    <motion.div
+      key={tech}
+      className="flex-none"
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+      transition={{ 
+        duration: 0.3, 
+        delay: globalIndex * 0.03,
+        ease: "easeOut"
+      }}
+    >
+      <Badge
+        variant="secondary"
+        className="flex items-center justify-center bg-accent-yellow text-black text-sm md:text-base font-semibold py-2 md:py-2.5 px-4 md:px-5 rounded-2xl cursor-default hover:bg-accent-yellow/90 transition-colors whitespace-nowrap"
+      >
+        {tech}
+      </Badge>
+    </motion.div>
+  )
+
   return (
     <section id="technologies" className="w-full py-20 bg-main-bg" ref={sectionRef}>
       <div className="container mx-auto px-4 md:px-30">
@@ -35,127 +64,21 @@ export default function TechnologiesSection() {
         <div className="max-w-5xl mx-auto">
           {/* Alternating rows with offset pattern */}
           <div className="flex flex-col gap-3 md:gap-4">
-            {/* Row 1 - starts normally */}
-            <div className="flex flex-wrap gap-3 md:gap-4">
-              {technologies.slice(0, 6).map((tech, index) => (
-                <motion.div
-                  key={tech}
-                  className="flex-none"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-                  transition={{ 
-                    duration: 0.3, 
-                    delay: index * 0.03,
-                    ease: "easeOut"
-                  }}
+            {rows.map((row, rowIndex) => {
+              const isEvenRow = rowIndex % 2 === 0
+              const startIndex = rowIndex * ITEMS_PER_ROW
+              
+              return (
+                <div 
+                  key={`row-${rowIndex}`}
+                  className={`flex flex-wrap gap-3 md:gap-4 ${!isEvenRow ? 'md:ml-12' : ''}`}
                 >
-                  <Badge
-                    variant="secondary"
-                    className="flex items-center justify-center bg-accent-yellow text-black text-sm md:text-base font-semibold py-2 md:py-2.5 px-4 md:px-5 rounded-2xl cursor-default hover:bg-accent-yellow/90 transition-colors whitespace-nowrap"
-                  >
-                    {tech}
-                  </Badge>
-                </motion.div>
-              ))}
-            </div>
-            
-            {/* Row 2 - offset with margin */}
-            <div className="flex flex-wrap gap-3 md:gap-4 md:ml-12">
-              {technologies.slice(6, 12).map((tech, index) => (
-                <motion.div
-                  key={tech}
-                  className="flex-none"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-                  transition={{ 
-                    duration: 0.3, 
-                    delay: (index + 6) * 0.03,
-                    ease: "easeOut"
-                  }}
-                >
-                  <Badge
-                    variant="secondary"
-                    className="flex items-center justify-center bg-accent-yellow text-black text-sm md:text-base font-semibold py-2 md:py-2.5 px-4 md:px-5 rounded-2xl cursor-default hover:bg-accent-yellow/90 transition-colors whitespace-nowrap"
-                  >
-                    {tech}
-                  </Badge>
-                </motion.div>
-              ))}
-            </div>
-            
-            {/* Row 3 - starts normally */}
-            <div className="flex flex-wrap gap-3 md:gap-4">
-              {technologies.slice(12, 18).map((tech, index) => (
-                <motion.div
-                  key={tech}
-                  className="flex-none"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-                  transition={{ 
-                    duration: 0.3, 
-                    delay: (index + 12) * 0.03,
-                    ease: "easeOut"
-                  }}
-                >
-                  <Badge
-                    variant="secondary"
-                    className="flex items-center justify-center bg-accent-yellow text-black text-sm md:text-base font-semibold py-2 md:py-2.5 px-4 md:px-5 rounded-2xl cursor-default hover:bg-accent-yellow/90 transition-colors whitespace-nowrap"
-                  >
-                    {tech}
-                  </Badge>
-                </motion.div>
-              ))}
-            </div>
-            
-            {/* Row 4 - offset with margin */}
-            <div className="flex flex-wrap gap-3 md:gap-4 md:ml-12">
-              {technologies.slice(18, 24).map((tech, index) => (
-                <motion.div
-                  key={tech}
-                  className="flex-none"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-                  transition={{ 
-                    duration: 0.3, 
-                    delay: (index + 18) * 0.03,
-                    ease: "easeOut"
-                  }}
-                >
-                  <Badge
-                    variant="secondary"
-                    className="flex items-center justify-center bg-accent-yellow text-black text-sm md:text-base font-semibold py-2 md:py-2.5 px-4 md:px-5 rounded-2xl cursor-default hover:bg-accent-yellow/90 transition-colors whitespace-nowrap"
-                  >
-                    {tech}
-                  </Badge>
-                </motion.div>
-              ))}
-            </div>
-            
-            {/* Row 5 - remaining items */}
-            {technologies.length > 24 && (
-              <div className="flex flex-wrap gap-3 md:gap-4">
-                {technologies.slice(24).map((tech, index) => (
-                  <motion.div
-                    key={tech}
-                    className="flex-none"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-                    transition={{ 
-                      duration: 0.3, 
-                      delay: (index + 24) * 0.03,
-                      ease: "easeOut"
-                    }}
-                  >
-                    <Badge
-                      variant="secondary"
-                      className="flex items-center justify-center bg-accent-yellow text-black text-sm md:text-base font-semibold py-2 md:py-2.5 px-4 md:px-5 rounded-2xl cursor-default hover:bg-accent-yellow/90 transition-colors whitespace-nowrap"
-                    >
-                      {tech}
-                    </Badge>
-                  </motion.div>
-                ))}
-              </div>
-            )}
+                  {row.map((tech, indexInRow) => 
+                    renderBadge(tech, startIndex + indexInRow)
+                  )}
+                </div>
+              )
+            })}
           </div>
         </div>
       </div>
